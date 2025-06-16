@@ -38,6 +38,12 @@ class TestServer {
     });
   }
 
+  public async run(): Promise<void> {
+    const transport = new StdioServerTransport();
+    await this.server.connect(transport);
+    console.error("The MCP server is running on stdio");
+  }
+
   private setupHandlers(): void {
     this.server.setRequestHandler(ListToolsRequestSchema, async () => {
       return {
@@ -88,3 +94,6 @@ class TestServer {
     });
   }
 }
+
+const server = new TestServer();
+server.run();
