@@ -8,7 +8,7 @@ import {
   ListResourcesRequestSchema,
   ReadResourceRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
-import { FAIRYTALE_PROJECT_DIR } from "./utils.js";
+import { FAIRYTALE_PROJECT_DIR } from "@/utils.js";
 import fs from "node:fs";
 import path from "node:path";
 
