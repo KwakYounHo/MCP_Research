@@ -8,11 +8,11 @@ import {
   ListResourcesRequestSchema,
   ReadResourceRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
-import { FAIRYTALE_PROJECT_DIR } from "@/utils.js";
+import { FAIRYTALE_PROJECT_DIR } from "../utils.js";
 import fs from "node:fs";
 import path from "node:path";
 
-class TestServer {
+class FairytaleServer {
   private server: Server;
   constructor() {
     this.server = new Server(
@@ -47,7 +47,7 @@ class TestServer {
   public async run(): Promise<void> {
     const transport = new StdioServerTransport();
     await this.server.connect(transport);
-    console.error("The MCP server is running on stdio");
+    console.error("🎉The MCP server is running on stdio");
   }
 
   private setupHandlers(): void {
@@ -184,5 +184,5 @@ class TestServer {
   }
 }
 
-const server = new TestServer();
+const server = new FairytaleServer();
 server.run();
